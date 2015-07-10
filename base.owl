@@ -1,0 +1,3660 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY prov "http://www.w3.org/ns/prov#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY ontology "http://www.semanticweb.org/ontology#" >
+    <!ENTITY prov-o-20130430 "http://www.w3.org/ns/prov-o-20130430#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontology#"
+     xml:base="http://www.semanticweb.org/ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:prov-o-20130430="http://www.w3.org/ns/prov-o-20130430#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:ontology="http://www.semanticweb.org/ontology#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontology">
+        <rdfs:label xml:lang="en">W3C PROVenance Interchange Ontology (PROV-O)</rdfs:label>
+        <owl:versionInfo xml:lang="en">Recommendation version 2013-04-30</owl:versionInfo>
+        <rdfs:comment xml:lang="en">This document is published by the Provenance Working Group (http://www.w3.org/2011/prov/wiki/Main_Page). 
+
+If you wish to make comments regarding this document, please send them to public-prov-comments@w3.org (subscribe public-prov-comments-request@w3.org, archives http://lists.w3.org/Archives/Public/public-prov-comments/). All feedback is welcome.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/prov-o/"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/ns/prov"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;comment">
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#isDefinedBy -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;isDefinedBy"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;label">
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#seeAlso -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;seeAlso">
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
+
+    <owl:AnnotationProperty rdf:about="&owl;versionInfo"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#aq -->
+
+    <owl:AnnotationProperty rdf:about="&prov;aq">
+        <rdfs:subPropertyOf rdf:resource="&rdfs;seeAlso"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#atTime -->
+
+    <owl:AnnotationProperty rdf:about="&prov;atTime">
+        <rdfs:domain rdf:resource="&ontology;Event"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#category -->
+
+    <owl:AnnotationProperty rdf:about="&prov;category">
+        <rdfs:comment xml:lang="en">Classify prov-o terms into three categories, including &apos;starting-point&apos;, &apos;qualifed&apos;, and &apos;extended&apos;. This classification is used by the prov-o html document to gently introduce prov-o terms to its users. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#component -->
+
+    <owl:AnnotationProperty rdf:about="&prov;component">
+        <rdfs:comment xml:lang="en">Classify prov-o terms into six components according to prov-dm, including &apos;agents-responsibility&apos;, &apos;alternate&apos;, &apos;annotations&apos;, &apos;collections&apos;, &apos;derivations&apos;, and &apos;entities-activities&apos;. This classification is used so that readers of prov-o specification can find its correspondence with the prov-dm specification.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#constraints -->
+
+    <owl:AnnotationProperty rdf:about="&prov;constraints">
+        <rdfs:comment xml:lang="en">A reference to the principal section of the PROV-CONSTRAINTS document that describes this concept.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;seeAlso"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#definition -->
+
+    <owl:AnnotationProperty rdf:about="&prov;definition">
+        <rdfs:comment xml:lang="en">A definition quoted from PROV-DM or PROV-CONSTRAINTS that describes the concept expressed with this OWL term.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#dm -->
+
+    <owl:AnnotationProperty rdf:about="&prov;dm">
+        <rdfs:comment xml:lang="en">A reference to the principal section of the PROV-DM document that describes this concept.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;seeAlso"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#editorialNote -->
+
+    <owl:AnnotationProperty rdf:about="&prov;editorialNote">
+        <rdfs:comment xml:lang="en">A note by the OWL development team about how this term expresses the PROV-DM concept, or how it should be used in context of semantic web or linked data.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#editorsDefinition -->
+
+    <owl:AnnotationProperty rdf:about="&prov;editorsDefinition">
+        <rdfs:comment xml:lang="en">When the prov-o term does not have a definition drawn from prov-dm, and the prov-o editor provides one.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&prov;definition"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#inverse -->
+
+    <owl:AnnotationProperty rdf:about="&prov;inverse">
+        <rdfs:comment xml:lang="en">PROV-O does not define all property inverses. The directionalities defined in PROV-O should be given preference over those not defined. However, if users wish to name the inverse of a PROV-O property, the local name given by prov:inverse should be used.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/prov-o/#names-of-inverse-properties"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#n -->
+
+    <owl:AnnotationProperty rdf:about="&prov;n">
+        <rdfs:comment xml:lang="en">A reference to the principal section of the PROV-DM document that describes this concept.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;seeAlso"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#order -->
+
+    <owl:AnnotationProperty rdf:about="&prov;order">
+        <rdfs:comment xml:lang="en">The position that this OWL term should be listed within documentation. The scope of the documentation (e.g., among all terms, among terms within a prov:category, among properties applying to a particular class, etc.) is unspecified.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#qualifiedForm -->
+
+    <owl:AnnotationProperty rdf:about="&prov;qualifiedForm">
+        <rdfs:comment xml:lang="en">This annotation property links a subproperty of prov:wasInfluencedBy with the subclass of prov:Influence and the qualifying property that are used to qualify it. 
+
+Example annotation:
+
+    prov:wasGeneratedBy prov:qualifiedForm prov:qualifiedGeneration, prov:Generation .
+
+Then this unqualified assertion:
+
+    :entity1 prov:wasGeneratedBy :activity1 .
+
+can be qualified by adding:
+
+   :entity1 prov:qualifiedGeneration :entity1Gen .
+   :entity1Gen 
+       a prov:Generation, prov:Influence;
+       prov:activity :activity1;
+       :customValue 1337 .
+
+Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1) is mirrored as the value of the prov:activity (or prov:entity, or prov:agent) property on the influence class.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;seeAlso"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#sharesDefinitionWith -->
+
+    <owl:AnnotationProperty rdf:about="&prov;sharesDefinitionWith">
+        <rdfs:subPropertyOf rdf:resource="&rdfs;seeAlso"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#specializationOf -->
+
+    <owl:AnnotationProperty rdf:about="&prov;specializationOf"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#todo -->
+
+    <owl:AnnotationProperty rdf:about="&prov;todo"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#unqualifiedForm -->
+
+    <owl:AnnotationProperty rdf:about="&prov;unqualifiedForm">
+        <rdfs:comment xml:lang="en">Classes and properties used to qualify relationships are annotated with prov:unqualifiedForm to indicate the property used to assert an unqualified provenance relation.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;seeAlso"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasRevisionOf -->
+
+    <owl:AnnotationProperty rdf:about="&prov;wasRevisionOf">
+        <rdfs:label>wasRevisionOf</rdfs:label>
+        <prov:component>derivations</prov:component>
+        <prov:category>expanded</prov:category>
+        <prov:inverse>hadRevision</prov:inverse>
+        <rdfs:comment xml:lang="en">A revision is a derivation that revises an entity into a revised version.</rdfs:comment>
+        <prov:qualifiedForm rdf:resource="&prov;Revision"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedRevision"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configures -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configures">
+        <rdfs:range rdf:resource="&ontology;Resource"/>
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresMedication -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresMedication">
+        <rdfs:range rdf:resource="&ontology;Medication"/>
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresProtocol -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresProtocol">
+        <rdfs:range rdf:resource="&ontology;Protocol"/>
+        <rdfs:domain rdf:resource="&ontology;ProtocolAdjustment"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresSetup -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresSetup">
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:range rdf:resource="&ontology;Setup"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresSetupEquipmentItem -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresSetupEquipmentItem">
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:range rdf:resource="&ontology;SetupEquipmentItem"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#configuresStimulus -->
+
+    <owl:ObjectProperty rdf:about="&ontology;configuresStimulus">
+        <rdfs:domain rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:range rdf:resource="&ontology;Stimulus"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;configures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasAmplifierSetting -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasAmplifierSetting">
+        <rdfs:range rdf:resource="&ontology;AmplifierSetting"/>
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasResourceConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasAnalysis -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasAnalysis">
+        <rdfs:range rdf:resource="&ontology;Analysis"/>
+        <rdfs:domain rdf:resource="&ontology;Experiment"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasResearchActivity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasAnimal -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasAnimal">
+        <rdfs:range rdf:resource="&ontology;Animal"/>
+        <rdfs:domain rdf:resource="&ontology;Experiment"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasAssociatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasBrainRegion -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasBrainRegion">
+        <rdfs:domain rdf:resource="&ontology;Brain"/>
+        <rdfs:range rdf:resource="&ontology;BrainRegion"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasCell -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasCell">
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCell"/>
+                <owl:onClass rdf:resource="&ontology;Cell"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;BrainRegion"/>
+                    <rdf:Description rdf:about="&ontology;Organ"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasEvent -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasEvent">
+        <rdfs:range rdf:resource="&ontology;Event"/>
+        <rdfs:domain rdf:resource="&ontology;SpikeTrain"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasExperiment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasExperiment">
+        <prov:inverse>isPartOfProject</prov:inverse>
+        <rdfs:comment>can be child of prov:wasInformedBy if the Project is considered an Activity</rdfs:comment>
+        <rdfs:range rdf:resource="&ontology;Experiment"/>
+        <rdfs:domain rdf:resource="&ontology;Project"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInformedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasExperimenter -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasExperimenter">
+        <prov:inverse>isExperimenterFor</prov:inverse>
+        <rdfs:range rdf:resource="&ontology;Experimenter"/>
+        <rdfs:domain rdf:resource="&ontology;ResearchActivity"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasAssociatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasPreparation -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasPreparation">
+        <rdfs:range rdf:resource="&ontology;Preparation"/>
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInformedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasPrincipalInvestigator -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasPrincipalInvestigator">
+        <rdfs:domain rdf:resource="&ontology;Experiment"/>
+        <rdfs:range rdf:resource="&prov;Person"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasAssociatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasProtocolAdjustment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasProtocolAdjustment">
+        <rdfs:range rdf:resource="&ontology;ProtocolAdjustment"/>
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasResourceConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasRecordingSession -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasRecordingSession">
+        <rdfs:domain rdf:resource="&ontology;Experiment"/>
+        <rdfs:range rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasResearchActivity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasResearchActivity -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasResearchActivity">
+        <prov:inverse>isPartOfExperiment</prov:inverse>
+        <rdfs:range rdf:resource="&ontology;ResearchActivity"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInformedBy"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:complementOf rdf:resource="&ontology;Experiment"/>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;Experiment"/>
+                    <rdf:Description rdf:about="&ontology;RecordingSession"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasResourceConfiguration -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasResourceConfiguration">
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:range rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;used"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasSetupEquipmentItem -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasSetupEquipmentItem">
+        <rdfs:domain rdf:resource="&ontology;Setup"/>
+        <rdfs:range rdf:resource="&ontology;SetupEquipmentItem"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <rdfs:comment rdf:datatype="&xsd;string">An ElectrodeGroup or a Tetrode can have hardware equipment, specifically, Eletrodes. Because the domain is inherited from the parent properties, one has to include the ElectrodeGroup and Tetrode classes in the domain of hasSetupEquipment and hasHardware, although, they are specifically needed only for the domain of hasElectrode.</rdfs:comment>
+        <owl:annotatedTarget rdf:resource="&ontology;Setup"/>
+        <owl:annotatedSource rdf:resource="&ontology;hasSetupEquipmentItem"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;domain"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasTrial -->
+
+    <owl:ObjectProperty rdf:about="&ontology;hasTrial">
+        <prov:inverse>isPartOfRecordingSession</prov:inverse>
+        <rdfs:range rdf:resource="&ontology;Trial"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;hasResearchActivity"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;Experiment"/>
+                    <rdf:Description rdf:about="&ontology;RecordingSession"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#isAboutAnimal -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isAboutAnimal">
+        <prov:inverse>hasAnimalLogEntry</prov:inverse>
+        <rdfs:range rdf:resource="&ontology;Animal"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasAttributedTo"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;AnatomicalStructure"/>
+                    <rdf:Description rdf:about="&ontology;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#isChannelOf -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isChannelOf">
+        <rdfs:domain rdf:resource="&ontology;Channel"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;Amplifier"/>
+                    <rdf:Description rdf:about="&ontology;ChannelGroup"/>
+                    <rdf:Description rdf:about="&ontology;Electrode"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#isComposedOf -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isComposedOf">
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;Channel"/>
+                    <rdf:Description rdf:about="&ontology;Electrode"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;ChannelGroup"/>
+                    <rdf:Description rdf:about="&ontology;ElectrodeGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#isProducedBy -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isProducedBy">
+        <prov:inverse>producesData</prov:inverse>
+        <rdfs:domain rdf:resource="&ontology;Data"/>
+        <rdfs:range rdf:resource="&ontology;ResearchActivity"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasGeneratedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#isRelativeToLocation -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isRelativeToLocation">
+        <rdfs:range rdf:resource="&ontology;AbsoluteLocation"/>
+        <rdfs:domain rdf:resource="&ontology;RelativeLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesAnalogSignal -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesAnalogSignal">
+        <rdfs:range rdf:resource="&ontology;AnalogSignal"/>
+        <rdfs:domain rdf:resource="&ontology;SpikeSorting"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesAnatomicalStructure -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesAnatomicalStructure">
+        <rdfs:range rdf:resource="&ontology;AnatomicalStructure"/>
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;used"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesCell -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesCell">
+        <rdfs:range rdf:resource="&ontology;Cell"/>
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;used"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesChannel -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesChannel">
+        <rdfs:range rdf:resource="&ontology;Channel"/>
+        <rdfs:domain rdf:resource="&ontology;SpikeSorting"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;used"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesData -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesData">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <prov:inverse>isUsedInAnalysis</prov:inverse>
+        <rdfs:domain rdf:resource="&ontology;Analysis"/>
+        <rdfs:range rdf:resource="&ontology;Data"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;used"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesDocument -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesDocument">
+        <rdfs:range rdf:resource="&ontology;Document"/>
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesProtocol -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesProtocol">
+        <rdfs:range rdf:resource="&ontology;Protocol"/>
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesResource -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesResource">
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:range rdf:resource="&ontology;Resource"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;used"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesSetup -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesSetup">
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:range rdf:resource="&ontology;Setup"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesSetupEquipmentItem -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesSetupEquipmentItem">
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:range rdf:resource="&ontology;SetupEquipmentItem"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#usesStimulus -->
+
+    <owl:ObjectProperty rdf:about="&ontology;usesStimulus">
+        <rdfs:domain rdf:resource="&ontology;RecordingSession"/>
+        <rdfs:range rdf:resource="&ontology;Stimulus"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;usesResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#wasDerivedFromAnalogSignal -->
+
+    <owl:ObjectProperty rdf:about="&ontology;wasDerivedFromAnalogSignal">
+        <rdfs:range rdf:resource="&ontology;AnalogSignal"/>
+        <rdfs:domain rdf:resource="&ontology;SpikeTrain"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#wasDerivedFromChannel -->
+
+    <owl:ObjectProperty rdf:about="&ontology;wasDerivedFromChannel">
+        <rdfs:range rdf:resource="&ontology;Channel"/>
+        <rdfs:domain rdf:resource="&ontology;Signal"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#wasDerivedFromNeuron -->
+
+    <owl:ObjectProperty rdf:about="&ontology;wasDerivedFromNeuron">
+        <rdfs:range rdf:resource="&ontology;Neuron"/>
+        <rdfs:domain rdf:resource="&ontology;SpikeTrain"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#wasDerivedFromUnit -->
+
+    <owl:ObjectProperty rdf:about="&ontology;wasDerivedFromUnit">
+        <rdfs:domain rdf:resource="&ontology;SpikeTrain"/>
+        <rdfs:range rdf:resource="&ontology;Unit"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#actedOnBehalfOf -->
+
+    <owl:ObjectProperty rdf:about="&prov;actedOnBehalfOf">
+        <rdfs:label>actedOnBehalfOf</rdfs:label>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:category>starting-point</prov:category>
+        <prov:inverse>hadDelegate</prov:inverse>
+        <rdfs:comment xml:lang="en">An object property to express the accountability of an agent towards another agent. The subordinate agent acted on behalf of the responsible agent in an actual activity. </rdfs:comment>
+        <rdfs:range rdf:resource="&prov;Agent"/>
+        <rdfs:domain rdf:resource="&prov;Agent"/>
+        <prov:qualifiedForm rdf:resource="&prov;Delegation"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedDelegation"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#atLocation -->
+
+    <owl:ObjectProperty rdf:about="&prov;atLocation">
+        <rdfs:label>atLocation</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <rdfs:comment>This property has multiple RDFS domains to suit multiple OWL Profiles. See &lt;a href=&quot;#owl-profile&quot;&gt;PROV-O OWL Profile&lt;/a&gt;.</rdfs:comment>
+        <prov:inverse>locationOf</prov:inverse>
+        <rdfs:comment xml:lang="en">The Location of any resource.</rdfs:comment>
+        <prov:editorialNote xml:lang="en">The naming of prov:atLocation parallels prov:atTime, and is not named prov:hadLocation to avoid conflicting with the convention that prov:had* properties are used on prov:Influence classes.</prov:editorialNote>
+        <prov:editorialNote xml:lang="en">This property is not functional because the many values could be at a variety of granularies (In this building, in this room, in that chair).</prov:editorialNote>
+        <prov:sharesDefinitionWith rdf:resource="&prov;Location"/>
+        <rdfs:range rdf:resource="&prov;Location"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Activity"/>
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                    <rdf:Description rdf:about="&prov;Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadMember -->
+
+    <owl:ObjectProperty rdf:about="&prov;hadMember">
+        <rdfs:label>hadMember</rdfs:label>
+        <prov:component>expanded</prov:component>
+        <prov:inverse>wasMemberOf</prov:inverse>
+        <prov:category>expanded</prov:category>
+        <prov:sharesDefinitionWith rdf:resource="&prov;Collection"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <prov:dm>http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-collection</prov:dm>
+        <rdfs:comment xml:lang="en">A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections.</rdfs:comment>
+        <owl:annotatedProperty rdf:resource="&rdfs;range"/>
+        <owl:annotatedTarget rdf:resource="&prov;Entity"/>
+        <owl:annotatedSource rdf:resource="&prov;hadMember"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadPrimarySource -->
+
+    <owl:ObjectProperty rdf:about="&prov;hadPrimarySource">
+        <rdfs:label>hadPrimarySource</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>derivations</prov:component>
+        <prov:inverse>wasPrimarySourceOf</prov:inverse>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <prov:qualifiedForm rdf:resource="&prov;PrimarySource"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedPrimarySource"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <rdfs:comment>hadPrimarySource property is a particular case of wasDerivedFrom (see http://www.w3.org/TR/prov-dm/#term-original-source) that aims to give credit to the source that originated some information.</rdfs:comment>
+        <owl:annotatedProperty rdf:resource="&rdfs;subPropertyOf"/>
+        <owl:annotatedSource rdf:resource="&prov;hadPrimarySource"/>
+        <owl:annotatedTarget rdf:resource="&prov;wasDerivedFrom"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#used -->
+
+    <owl:ObjectProperty rdf:about="&prov;used">
+        <rdfs:label>used</rdfs:label>
+        <prov:component>entities-activities</prov:component>
+        <prov:inverse>wasUsedBy</prov:inverse>
+        <prov:category>starting-point</prov:category>
+        <rdfs:comment xml:lang="en">A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven .</rdfs:comment>
+        <rdfs:domain rdf:resource="&prov;Activity"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <prov:qualifiedForm rdf:resource="&prov;Usage"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedUsage"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasAssociatedWith -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasAssociatedWith">
+        <rdfs:label>wasAssociatedWith</rdfs:label>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:category>starting-point</prov:category>
+        <rdfs:comment xml:lang="en">An prov:Agent that had some (unspecified) responsibility for the occurrence of this prov:Activity.</rdfs:comment>
+        <prov:inverse>wasAssociateFor</prov:inverse>
+        <rdfs:domain rdf:resource="&prov;Activity"/>
+        <rdfs:range rdf:resource="&prov;Agent"/>
+        <prov:qualifiedForm rdf:resource="&prov;Association"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedAssociation"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasAttributedTo -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasAttributedTo">
+        <rdfs:label>wasAttributedTo</rdfs:label>
+        <prov:inverse>contributed</prov:inverse>
+        <rdfs:comment xml:lang="en">Attribution is the ascribing of an entity to an agent.</rdfs:comment>
+        <prov:category>starting-point</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:definition xml:lang="en">Attribution is the ascribing of an entity to an agent.</prov:definition>
+        <rdfs:range rdf:resource="&prov;Agent"/>
+        <prov:qualifiedForm rdf:resource="&prov;Attribution"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedAttribution"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <rdfs:comment>Attribution is a particular case of trace (see http://www.w3.org/TR/prov-dm/#concept-trace), in the sense that it links an entity to the agent that ascribed it.</rdfs:comment>
+        <prov:definition>IF wasAttributedTo(e2,ag1,aAttr) holds, THEN wasInfluencedBy(e2,ag1) also holds. </prov:definition>
+        <owl:annotatedProperty rdf:resource="&rdfs;subPropertyOf"/>
+        <owl:annotatedSource rdf:resource="&prov;wasAttributedTo"/>
+        <owl:annotatedTarget rdf:resource="&prov;wasInfluencedBy"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasDerivedFrom -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasDerivedFrom">
+        <rdfs:label>wasDerivedFrom</rdfs:label>
+        <prov:inverse>hadDerivation</prov:inverse>
+        <prov:category>starting-point</prov:category>
+        <prov:definition xml:lang="en">A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity.</prov:definition>
+        <rdfs:comment xml:lang="en">The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable.</rdfs:comment>
+        <prov:component>derivations</prov:component>
+        <prov:qualifiedForm rdf:resource="&prov;Derivation"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedDerivation"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <rdfs:comment>Derivation is a particular case of trace (see http://www.w3.org/TR/prov-dm/#term-trace), since it links an entity to another entity that contributed to its existence.</rdfs:comment>
+        <owl:annotatedProperty rdf:resource="&rdfs;subPropertyOf"/>
+        <owl:annotatedSource rdf:resource="&prov;wasDerivedFrom"/>
+        <owl:annotatedTarget rdf:resource="&prov;wasInfluencedBy"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasGeneratedBy -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasGeneratedBy">
+        <rdfs:label>wasGeneratedBy</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:inverse>generated</prov:inverse>
+        <prov:component>entities-activities</prov:component>
+        <rdfs:range rdf:resource="&prov;Activity"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <prov:qualifiedForm rdf:resource="&prov;Generation"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedGeneration"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasInfluencedBy -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasInfluencedBy">
+        <rdfs:label>wasInfluencedBy</rdfs:label>
+        <rdfs:comment xml:lang="en">Because prov:wasInfluencedBy is a broad relation, its more specific subproperties (e.g. prov:wasInformedBy, prov:actedOnBehalfOf, prov:wasEndedBy, etc.) should be used when applicable.</rdfs:comment>
+        <prov:category>qualified</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:inverse>influenced</prov:inverse>
+        <prov:editorialNote xml:lang="en">The sub-properties of prov:wasInfluencedBy can be elaborated in more detail using the Qualification Pattern. For example, the binary relation :baking prov:used :spoon can be qualified by asserting :baking prov:qualifiedUsage [ a prov:Usage; prov:entity :spoon; prov:atLocation :kitchen ] .
+
+Subproperties of prov:wasInfluencedBy may also be asserted directly without being qualified.
+
+prov:wasInfluencedBy should not be used without also using one of its subproperties. 
+</prov:editorialNote>
+        <rdfs:comment>This property has multiple RDFS domains to suit multiple OWL Profiles. See &lt;a href=&quot;#owl-profile&quot;&gt;PROV-O OWL Profile&lt;/a&gt;.</rdfs:comment>
+        <prov:qualifiedForm rdf:resource="&prov;Influence"/>
+        <prov:sharesDefinitionWith rdf:resource="&prov;Influence"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedInfluence"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Activity"/>
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                    <rdf:Description rdf:about="&prov;Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Activity"/>
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                    <rdf:Description rdf:about="&prov;Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <prov:dm>http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence</prov:dm>
+        <prov:definition>influencee: an identifier (o2) for an entity, activity, or agent; </prov:definition>
+        <owl:annotatedProperty rdf:resource="&rdfs;domain"/>
+        <owl:annotatedSource rdf:resource="&prov;wasInfluencedBy"/>
+        <owl:annotatedTarget>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Activity"/>
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                    <rdf:Description rdf:about="&prov;Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <prov:dm>http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence</prov:dm>
+        <prov:definition>influencer: an identifier (o1) for an ancestor entity, activity, or agent that the former depends on;</prov:definition>
+        <owl:annotatedProperty rdf:resource="&rdfs;range"/>
+        <owl:annotatedSource rdf:resource="&prov;wasInfluencedBy"/>
+        <owl:annotatedTarget>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Activity"/>
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                    <rdf:Description rdf:about="&prov;Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasInformedBy -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasInformedBy">
+        <rdfs:label>wasInformedBy</rdfs:label>
+        <prov:inverse>informed</prov:inverse>
+        <rdfs:comment xml:lang="en">An activity a2 is dependent on or informed by another activity a1, by way of some unspecified entity that is generated by a1 and used by a2.</rdfs:comment>
+        <prov:category>starting-point</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <rdfs:range rdf:resource="&prov;Activity"/>
+        <rdfs:domain rdf:resource="&prov;Activity"/>
+        <prov:qualifiedForm rdf:resource="&prov;Communication"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedCommunication"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasQuotedFrom -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasQuotedFrom">
+        <rdfs:label>wasQuotedFrom</rdfs:label>
+        <prov:component>derivations</prov:component>
+        <prov:inverse>quotedAs</prov:inverse>
+        <prov:category>expanded</prov:category>
+        <rdfs:comment xml:lang="en">An entity is derived from an original entity by copying, or &apos;quoting&apos;, some or all of it.</rdfs:comment>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <prov:qualifiedForm rdf:resource="&prov;Quotation"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedQuotation"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <rdfs:comment>Quotation is a particular case of derivation (see http://www.w3.org/TR/prov-dm/#term-quotation) in which an entity is derived from an original entity by copying, or &quot;quoting&quot;, some or all of it. </rdfs:comment>
+        <owl:annotatedProperty rdf:resource="&rdfs;subPropertyOf"/>
+        <owl:annotatedTarget rdf:resource="&prov;wasDerivedFrom"/>
+        <owl:annotatedSource rdf:resource="&prov;wasQuotedFrom"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasRevisionOf -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasRevisionOf">
+        <rdfs:label>wasRevisionOf</rdfs:label>
+        <prov:component>derivations</prov:component>
+        <prov:category>expanded</prov:category>
+        <prov:inverse>hadRevision</prov:inverse>
+        <rdfs:comment xml:lang="en">A revision is a derivation that revises an entity into a revised version.</rdfs:comment>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <prov:qualifiedForm rdf:resource="&prov;Revision"/>
+        <prov:qualifiedForm rdf:resource="&prov;qualifiedRevision"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <rdfs:comment>Revision is a derivation (see http://www.w3.org/TR/prov-dm/#term-Revision). Moreover, according to 
+http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 2012 &apos;wasRevisionOf is a strict sub-relation of wasDerivedFrom since two entities e2 and e1 may satisfy wasDerivedFrom(e2,e1) without being a variant of each other.&apos;</rdfs:comment>
+        <owl:annotatedProperty rdf:resource="&rdfs;subPropertyOf"/>
+        <owl:annotatedTarget rdf:resource="&prov;wasDerivedFrom"/>
+        <owl:annotatedSource rdf:resource="&prov;wasRevisionOf"/>
+    </owl:Axiom>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasAge -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasAge">
+        <rdfs:domain rdf:resource="&ontology;Animal"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasAnimalID -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasAnimalID">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&ontology;Animal"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasBehavioralCondition -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasBehavioralCondition">
+        <rdfs:domain rdf:resource="&ontology;Stimulus"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasBehavioralState -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasBehavioralState">
+        <rdfs:domain rdf:resource="&ontology;Preparation"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasCageID -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasCageID">
+        <rdfs:domain rdf:resource="&ontology;Animal"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasChannelNumber -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasChannelNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&ontology;Channel"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasCity -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasCity">
+        <rdfs:domain rdf:resource="&ontology;Address"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasColor -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasColor">
+        <rdfs:domain rdf:resource="&ontology;Stimulus"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasCondition -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasCondition">
+        <rdfs:domain rdf:resource="&ontology;AnimalLogEntry"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasDescription">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;SetupEquipmentItem"/>
+                    <rdf:Description rdf:about="&prov;Location"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasDiet -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasDiet">
+        <rdfs:domain rdf:resource="&ontology;AnimalLogEntry"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasElectrodeArrayGeometry -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasElectrodeArrayGeometry">
+        <rdfs:domain rdf:resource="&ontology;ElectrodeGroup"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasElectrodeNumber -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasElectrodeNumber">
+        <rdfs:domain rdf:resource="&ontology;Electrode"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasElectrodeSpacing -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasElectrodeSpacing">
+        <rdfs:domain rdf:resource="&ontology;ElectrodeGroup"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasGoal -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasGoal">
+        <rdfs:domain rdf:resource="&ontology;Project"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasLatitude -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasLatitude">
+        <rdfs:domain rdf:resource="&ontology;GeographicLocation"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasLfpBandpassHighCutoff -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasLfpBandpassHighCutoff">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&ontology;AmplifierSetting"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasLfpBandpassLowCutoff -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasLfpBandpassLowCutoff">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&ontology;AmplifierSetting"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasLocationNumber -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasLocationNumber">
+        <rdfs:domain rdf:resource="&ontology;Address"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasLongitude -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasLongitude">
+        <rdfs:domain rdf:resource="&ontology;GeographicLocation"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasMark -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasMark">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&ontology;Animal"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasName -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;BrainRegion"/>
+                    <rdf:Description rdf:about="&ontology;Event"/>
+                    <rdf:Description rdf:about="&ontology;Medication"/>
+                    <rdf:Description rdf:about="&ontology;Project"/>
+                    <rdf:Description rdf:about="&ontology;SetupEquipmentItem"/>
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasNumber -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&ontology;Permit"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasNumberOfChannels -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasNumberOfChannels">
+        <rdfs:domain rdf:resource="&ontology;ChannelGroup"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasNumberOfElectrodes -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasNumberOfElectrodes">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&ontology;ElectrodeGroup"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasPath -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasPath">
+        <rdfs:domain rdf:resource="&ontology;VirtualLocation"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasPerformance -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasPerformance">
+        <rdfs:domain rdf:resource="&ontology;AnimalLogEntry"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasPostalCode -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasPostalCode">
+        <rdfs:domain rdf:resource="&ontology;Address"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasQuantity -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasQuantity">
+        <rdfs:domain rdf:resource="&ontology;Medication"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasResearchDomain -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasResearchDomain">
+        <rdfs:domain rdf:resource="&ontology;Experimenter"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasSamplingRate -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasSamplingRate">
+        <rdfs:domain rdf:resource="&ontology;AnalogSignal"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasSex -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasSex">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&ontology;Animal"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasSize -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasSize">
+        <rdfs:domain rdf:resource="&ontology;Stimulus"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasSpecies -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasSpecies">
+        <rdfs:domain rdf:resource="&ontology;Animal"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasState -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasState">
+        <rdfs:domain rdf:resource="&ontology;Address"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasStreet -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasStreet">
+        <rdfs:domain rdf:resource="&ontology;Address"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasStressLevel -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasStressLevel">
+        <rdfs:domain rdf:resource="&ontology;AnimalLogEntry"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasType -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasType">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;Cell"/>
+                    <rdf:Description rdf:about="&ontology;Stimulus"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasVendor -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasVendor">
+        <rdfs:domain rdf:resource="&ontology;SetupEquipmentItem"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasVersion -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasVersion">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&prov;SoftwareAgent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#hasWeight -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasWeight">
+        <rdfs:domain rdf:resource="&ontology;AnimalLogEntry"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;float"/>
+                    <rdf:Description rdf:about="&xsd;positiveInteger"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#endedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="&prov;endedAtTime">
+        <rdfs:label>endedAtTime</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:editorialNote xml:lang="en">It is the intent that the property chain holds: (prov:qualifiedEnd o prov:atTime) rdfs:subPropertyOf prov:endedAtTime.</prov:editorialNote>
+        <rdfs:comment xml:lang="en">The time at which an activity ended. See also prov:startedAtTime.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain rdf:resource="&prov;Activity"/>
+        <prov:qualifiedForm rdf:resource="&prov;End"/>
+        <prov:qualifiedForm rdf:resource="&prov;atTime"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#generatedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="&prov;generatedAtTime">
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#startedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="&prov;startedAtTime">
+        <rdfs:label>startedAtTime</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:editorialNote xml:lang="en">It is the intent that the property chain holds: (prov:qualifiedStart o prov:atTime) rdfs:subPropertyOf prov:startedAtTime.</prov:editorialNote>
+        <rdfs:comment xml:lang="en">The time at which an activity started. See also prov:endedAtTime.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain rdf:resource="&prov;Activity"/>
+        <prov:qualifiedForm rdf:resource="&prov;Start"/>
+        <prov:qualifiedForm rdf:resource="&prov;atTime"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#value -->
+
+    <owl:DatatypeProperty rdf:about="&prov;value">
+        <rdfs:label>value</rdfs:label>
+        <prov:dm rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-attribute-value</prov:dm>
+        <prov:definition xml:lang="en">Provides a value that is a direct representation of an entity.</prov:definition>
+        <prov:editorialNote>The editor&apos;s definition comes from http://www.w3.org/TR/rdf-primer/#rdfvalue</prov:editorialNote>
+        <prov:editorialNote xml:lang="en">This property serves the same purpose as rdf:value, but has been reintroduced to avoid some of the definitional ambiguity in the RDF specification (specifically, &apos;may be used in describing structured values&apos;).</prov:editorialNote>
+        <prov:component>entities-activities</prov:component>
+        <prov:category>expanded</prov:category>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;RelativeLocation"/>
+                    <rdf:Description rdf:about="&prov;Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#AbsoluteLocation -->
+
+    <owl:Class rdf:about="&ontology;AbsoluteLocation">
+        <rdfs:subClassOf rdf:resource="&ontology;PhysicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Address -->
+
+    <owl:Class rdf:about="&ontology;Address">
+        <rdfs:subClassOf rdf:resource="&ontology;AbsoluteLocation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasStreet"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCity"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasPostalCode"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasStreet"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasState"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCity"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasLocationNumber"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasLocationNumber"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasState"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasPostalCode"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Amplifier -->
+
+    <owl:Class rdf:about="&ontology;Amplifier">
+        <rdfs:subClassOf rdf:resource="&ontology;Hardware"/>
+        <owl:disjointWith rdf:resource="&ontology;Camera"/>
+        <owl:disjointWith rdf:resource="&ontology;Channel"/>
+        <owl:disjointWith rdf:resource="&ontology;ChannelGroup"/>
+        <owl:disjointWith rdf:resource="&ontology;Electrode"/>
+        <owl:disjointWith rdf:resource="&ontology;ElectrodeGroup"/>
+        <owl:disjointWith rdf:resource="&ontology;Tetrode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#AmplifierSetting -->
+
+    <owl:Class rdf:about="&ontology;AmplifierSetting">
+        <rdfs:subClassOf rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasLfpBandpassLowCutoff"/>
+                <owl:allValuesFrom rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasLfpBandpassHighCutoff"/>
+                <owl:allValuesFrom rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasLfpBandpassLowCutoff"/>
+                <owl:someValuesFrom rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasLfpBandpassHighCutoff"/>
+                <owl:someValuesFrom rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#AnalogSignal -->
+
+    <owl:Class rdf:about="&ontology;AnalogSignal">
+        <rdfs:subClassOf rdf:resource="&ontology;Signal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSamplingRate"/>
+                <owl:allValuesFrom rdf:resource="&xsd;float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSamplingRate"/>
+                <owl:someValuesFrom rdf:resource="&xsd;float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Analysis -->
+
+    <owl:Class rdf:about="&ontology;Analysis">
+        <rdfs:subClassOf rdf:resource="&ontology;ResearchActivity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesData"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;Data"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesData"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;Data"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#AnatomicalStructure -->
+
+    <owl:Class rdf:about="&ontology;AnatomicalStructure">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAboutAnimal"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAboutAnimal"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Animal -->
+
+    <owl:Class rdf:about="&ontology;Animal">
+        <rdfs:subClassOf rdf:resource="&prov;Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSpecies"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCageID"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasAge"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSex"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasMark"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasAge"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasAnimalID"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasAnimalID"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSpecies"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSex"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasMark"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCageID"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <prov:definition xml:lang="en">An Animal represents any member that belongs to the Animalia kingdom. In the case of experiments, an Animal is equivalent to a subject on which the experiment is performed.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#AnimalLogEntry -->
+
+    <owl:Class rdf:about="&ontology;AnimalLogEntry">
+        <rdfs:subClassOf rdf:resource="&ontology;Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasWeight"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&xsd;float"/>
+                            <rdf:Description rdf:about="&xsd;positiveInteger"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasStressLevel"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAboutAnimal"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasDiet"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasDiet"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasPerformance"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasPerformance"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAboutAnimal"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCondition"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCondition"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasStressLevel"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasWeight"/>
+                <owl:allValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&xsd;float"/>
+                            <rdf:Description rdf:about="&xsd;positiveInteger"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <prov:definition>Health state log ~ journal</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Brain -->
+
+    <owl:Class rdf:about="&ontology;Brain">
+        <rdfs:subClassOf rdf:resource="&ontology;Organ"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasBrainRegion"/>
+                <owl:someValuesFrom rdf:resource="&ontology;BrainRegion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasBrainRegion"/>
+                <owl:allValuesFrom rdf:resource="&ontology;BrainRegion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#BrainRegion -->
+
+    <owl:Class rdf:about="&ontology;BrainRegion">
+        <rdfs:subClassOf rdf:resource="&ontology;AnatomicalStructure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCell"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Cell"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Camera -->
+
+    <owl:Class rdf:about="&ontology;Camera">
+        <rdfs:subClassOf rdf:resource="&ontology;Hardware"/>
+        <owl:disjointWith rdf:resource="&ontology;Channel"/>
+        <owl:disjointWith rdf:resource="&ontology;ChannelGroup"/>
+        <owl:disjointWith rdf:resource="&ontology;Electrode"/>
+        <owl:disjointWith rdf:resource="&ontology;ElectrodeGroup"/>
+        <owl:disjointWith rdf:resource="&ontology;Tetrode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Cell -->
+
+    <owl:Class rdf:about="&ontology;Cell">
+        <rdfs:subClassOf rdf:resource="&ontology;AnatomicalStructure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasType"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasType"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <prov:definition xml:lang="en">A usually microscopic structure containing nuclear and cytoplasmic material; the basic structural unit of all organisms.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Channel -->
+
+    <owl:Class rdf:about="&ontology;Channel">
+        <rdfs:subClassOf rdf:resource="&ontology;Hardware"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ontology;isChannelOf"/>
+                                <owl:someValuesFrom rdf:resource="&ontology;Amplifier"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ontology;isChannelOf"/>
+                                <owl:allValuesFrom rdf:resource="&ontology;Amplifier"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ontology;isChannelOf"/>
+                                <owl:someValuesFrom rdf:resource="&ontology;ChannelGroup"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ontology;isChannelOf"/>
+                                <owl:allValuesFrom rdf:resource="&ontology;ChannelGroup"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ontology;isChannelOf"/>
+                                <owl:someValuesFrom rdf:resource="&ontology;Electrode"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ontology;isChannelOf"/>
+                                <owl:allValuesFrom rdf:resource="&ontology;Electrode"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasChannelNumber"/>
+                <owl:allValuesFrom rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasChannelNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&ontology;ChannelGroup"/>
+        <owl:disjointWith rdf:resource="&ontology;Electrode"/>
+        <owl:disjointWith rdf:resource="&ontology;ElectrodeGroup"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#ChannelGroup -->
+
+    <owl:Class rdf:about="&ontology;ChannelGroup">
+        <rdfs:subClassOf rdf:resource="&ontology;Hardware"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNumberOfChannels"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNumberOfChannels"/>
+                <owl:allValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isComposedOf"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Channel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isComposedOf"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Channel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&ontology;Electrode"/>
+        <owl:disjointWith rdf:resource="&ontology;ElectrodeGroup"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Data -->
+
+    <owl:Class rdf:about="&ontology;Data">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&prov;atLocation"/>
+                        <owl:someValuesFrom rdf:resource="&prov;Location"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&prov;atLocation"/>
+                        <owl:allValuesFrom rdf:resource="&prov;Location"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&ontology;Resource"/>
+        <owl:disjointWith rdf:resource="&ontology;ResourceConfiguration"/>
+        <owl:disjointWith rdf:resource="&prov;Activity"/>
+        <owl:disjointWith rdf:resource="&prov;Agent"/>
+        <owl:disjointWith rdf:resource="&prov;Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Document -->
+
+    <owl:Class rdf:about="&ontology;Document">
+        <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAboutAnimal"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAboutAnimal"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Electrode -->
+
+    <owl:Class rdf:about="&ontology;Electrode">
+        <rdfs:subClassOf rdf:resource="&ontology;Hardware"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasElectrodeNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;positiveInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasElectrodeNumber"/>
+                <owl:allValuesFrom rdf:resource="&xsd;positiveInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&ontology;ElectrodeGroup"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#ElectrodeGroup -->
+
+    <owl:Class rdf:about="&ontology;ElectrodeGroup">
+        <rdfs:subClassOf rdf:resource="&ontology;Hardware"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasElectrodeArrayGeometry"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isComposedOf"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Electrode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNumberOfElectrodes"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasElectrodeSpacing"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasElectrodeArrayGeometry"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasElectrodeSpacing"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNumberOfElectrodes"/>
+                <owl:allValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isComposedOf"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Electrode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&ontology;Tetrode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Event -->
+
+    <owl:Class rdf:about="&ontology;Event">
+        <rdfs:subClassOf rdf:resource="&ontology;Data"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&prov;generatedAtTime"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&prov;generatedAtTime"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Experiment -->
+
+    <owl:Class rdf:about="&ontology;Experiment">
+        <rdfs:subClassOf rdf:resource="&ontology;ResearchActivity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasResearchActivity"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&ontology;ResearchActivity"/>
+                                    <owl:Class>
+                                        <owl:complementOf rdf:resource="&ontology;Experiment"/>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasResearchActivity"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&ontology;ResearchActivity"/>
+                                    <owl:Class>
+                                        <owl:complementOf rdf:resource="&ontology;Experiment"/>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasPrincipalInvestigator"/>
+                        <owl:someValuesFrom rdf:resource="&prov;Person"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasPrincipalInvestigator"/>
+                        <owl:allValuesFrom rdf:resource="&prov;Person"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasAnimal"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;Animal"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasAnimal"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;Animal"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasAnalysis"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;Analysis"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasAnalysis"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;Analysis"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasRecordingSession"/>
+                <owl:allValuesFrom rdf:resource="&ontology;RecordingSession"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasTrial"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Trial"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Experimenter -->
+
+    <owl:Class rdf:about="&ontology;Experimenter">
+        <rdfs:subClassOf rdf:resource="&prov;Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasResearchDomain"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasResearchDomain"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#GeographicLocation -->
+
+    <owl:Class rdf:about="&ontology;GeographicLocation">
+        <rdfs:subClassOf rdf:resource="&ontology;AbsoluteLocation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasLatitude"/>
+                <owl:someValuesFrom rdf:resource="&xsd;float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasLongitude"/>
+                <owl:allValuesFrom rdf:resource="&xsd;float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasLongitude"/>
+                <owl:someValuesFrom rdf:resource="&xsd;float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasLatitude"/>
+                <owl:allValuesFrom rdf:resource="&xsd;float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Hardware -->
+
+    <owl:Class rdf:about="&ontology;Hardware">
+        <rdfs:subClassOf rdf:resource="&ontology;SetupEquipmentItem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Medication -->
+
+    <owl:Class rdf:about="&ontology;Medication">
+        <rdfs:subClassOf rdf:resource="&ontology;Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasQuantity"/>
+                <owl:allValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasQuantity"/>
+                <owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&ontology;Protocol"/>
+        <owl:disjointWith rdf:resource="&ontology;SetupEquipmentItem"/>
+        <owl:disjointWith rdf:resource="&ontology;Stimulus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Neuron -->
+
+    <owl:Class rdf:about="&ontology;Neuron">
+        <rdfs:subClassOf rdf:resource="&ontology;Cell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Organ -->
+
+    <owl:Class rdf:about="&ontology;Organ">
+        <rdfs:subClassOf rdf:resource="&ontology;AnatomicalStructure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasCell"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Cell"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <prov:definition xml:lang="en">A grouping of tissues into a distinct structure, that performs a specialized task.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Permit -->
+
+    <owl:Class rdf:about="&ontology;Permit">
+        <rdfs:subClassOf rdf:resource="&ontology;Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNumber"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#PhysicalLocation -->
+
+    <owl:Class rdf:about="&ontology;PhysicalLocation">
+        <rdfs:subClassOf rdf:resource="&prov;Location"/>
+        <owl:disjointWith rdf:resource="&ontology;VirtualLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Preparation -->
+
+    <owl:Class rdf:about="&ontology;Preparation">
+        <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasBehavioralState"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasBehavioralState"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Project -->
+
+    <owl:Class rdf:about="&ontology;Project">
+        <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasExperiment"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Experiment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasGoal"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasExperiment"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Experiment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasGoal"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <prov:definition xml:lang="en">A Project is a piece of planned work that has a specific goal. Its development involves the interaction between Activities, Agents, Entities in order to fulfill its purpose.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Protocol -->
+
+    <owl:Class rdf:about="&ontology;Protocol">
+        <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
+        <owl:disjointWith rdf:resource="&ontology;SetupEquipmentItem"/>
+        <owl:disjointWith rdf:resource="&ontology;Stimulus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#ProtocolAdjustment -->
+
+    <owl:Class rdf:about="&ontology;ProtocolAdjustment">
+        <rdfs:subClassOf rdf:resource="&ontology;ResourceConfiguration"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;configuresProtocol"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&ontology;Protocol"/>
+                            <rdf:Description rdf:about="&ontology;Trial"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;configuresProtocol"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&ontology;Protocol"/>
+                            <rdf:Description rdf:about="&ontology;Trial"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;configuresProtocol"/>
+                <owl:onClass rdf:resource="&ontology;Protocol"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#RecordingSession -->
+
+    <owl:Class rdf:about="&ontology;RecordingSession">
+        <rdfs:subClassOf rdf:resource="&ontology;ResearchActivity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesProtocol"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;Protocol"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesProtocol"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;Protocol"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesSetup"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;Setup"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesSetup"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;Setup"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;usesStimulus"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Stimulus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasTrial"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;Trial"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasTrial"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;Trial"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;usesCell"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Cell"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;usesDocument"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Medication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesSetupEquipmentItem"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;SetupEquipmentItem"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesSetupEquipmentItem"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;SetupEquipmentItem"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesResource"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;Resource"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesResource"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;Resource"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesAnatomicalStructure"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;AnatomicalStructure"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesAnatomicalStructure"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;AnatomicalStructure"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasPreparation"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;Preparation"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasPreparation"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;Preparation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#RelativeLocation -->
+
+    <owl:Class rdf:about="&ontology;RelativeLocation">
+        <rdfs:subClassOf rdf:resource="&ontology;PhysicalLocation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isRelativeToLocation"/>
+                <owl:allValuesFrom rdf:resource="&ontology;AbsoluteLocation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isRelativeToLocation"/>
+                <owl:someValuesFrom rdf:resource="&ontology;AbsoluteLocation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#ResearchActivity -->
+
+    <owl:Class rdf:about="&ontology;ResearchActivity">
+        <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasExperimenter"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;Experimenter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;hasExperimenter"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;Experimenter"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Resource -->
+
+    <owl:Class rdf:about="&ontology;Resource">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <owl:disjointWith rdf:resource="&ontology;ResourceConfiguration"/>
+        <owl:disjointWith rdf:resource="&prov;Location"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&prov;SoftwareAgent"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:disjointWith>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Activity"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&ontology;Setup"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#ResourceConfiguration -->
+
+    <owl:Class rdf:about="&ontology;ResourceConfiguration">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <owl:disjointWith rdf:resource="&prov;Activity"/>
+        <owl:disjointWith rdf:resource="&prov;Agent"/>
+        <owl:disjointWith rdf:resource="&prov;Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Setup -->
+
+    <owl:Class rdf:about="&ontology;Setup">
+        <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSetupEquipmentItem"/>
+                <owl:allValuesFrom rdf:resource="&ontology;SetupEquipmentItem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSetupEquipmentItem"/>
+                <owl:someValuesFrom rdf:resource="&ontology;SetupEquipmentItem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#SetupEquipmentItem -->
+
+    <owl:Class rdf:about="&ontology;SetupEquipmentItem">
+        <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasVendor"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasDescription"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasVendor"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasDescription"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&ontology;Stimulus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Signal -->
+
+    <owl:Class rdf:about="&ontology;Signal">
+        <rdfs:subClassOf rdf:resource="&ontology;Data"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;wasDerivedFromChannel"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Channel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;wasDerivedFromChannel"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Channel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Software -->
+
+    <owl:Class rdf:about="&ontology;Software">
+        <owl:equivalentClass rdf:resource="&prov;SoftwareAgent"/>
+        <rdfs:subClassOf rdf:resource="&ontology;SetupEquipmentItem"/>
+        <rdfs:subClassOf rdf:resource="&prov;Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasVersion"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasVersion"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <prov:sharesDefinitionWith xml:lang="en">SoftwareAgent</prov:sharesDefinitionWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#SpikeSorting -->
+
+    <owl:Class rdf:about="&ontology;SpikeSorting">
+        <rdfs:subClassOf rdf:resource="&ontology;Analysis"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesChannel"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;Channel"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesChannel"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;Channel"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesAnalogSignal"/>
+                        <owl:someValuesFrom rdf:resource="&ontology;AnalogSignal"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ontology;usesAnalogSignal"/>
+                        <owl:allValuesFrom rdf:resource="&ontology;AnalogSignal"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#SpikeTrain -->
+
+    <owl:Class rdf:about="&ontology;SpikeTrain">
+        <rdfs:subClassOf rdf:resource="&ontology;Signal"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ontology;wasDerivedFromNeuron"/>
+                                <owl:someValuesFrom rdf:resource="&ontology;Neuron"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ontology;wasDerivedFromNeuron"/>
+                                <owl:allValuesFrom rdf:resource="&ontology;Neuron"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ontology;wasDerivedFromUnit"/>
+                                <owl:someValuesFrom rdf:resource="&ontology;Unit"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ontology;wasDerivedFromUnit"/>
+                                <owl:allValuesFrom rdf:resource="&ontology;Unit"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;wasDerivedFromAnalogSignal"/>
+                <owl:someValuesFrom rdf:resource="&ontology;AnalogSignal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasEvent"/>
+                <owl:someValuesFrom rdf:resource="&ontology;Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;wasDerivedFromAnalogSignal"/>
+                <owl:allValuesFrom rdf:resource="&ontology;AnalogSignal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasEvent"/>
+                <owl:allValuesFrom rdf:resource="&ontology;Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Stimulus -->
+
+    <owl:Class rdf:about="&ontology;Stimulus">
+        <rdfs:subClassOf rdf:resource="&ontology;Resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasBehavioralCondition"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasSize"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasType"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasBehavioralCondition"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasColor"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasType"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Tetrode -->
+
+    <owl:Class rdf:about="&ontology;Tetrode">
+        <rdfs:subClassOf rdf:resource="&ontology;Electrode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Trial -->
+
+    <owl:Class rdf:about="&ontology;Trial">
+        <rdfs:subClassOf rdf:resource="&ontology;ResearchActivity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasProtocolAdjustment"/>
+                <owl:allValuesFrom rdf:resource="&ontology;ProtocolAdjustment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasAmplifierSetting"/>
+                <owl:allValuesFrom rdf:resource="&ontology;AmplifierSetting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Unit -->
+
+    <owl:Class rdf:about="&ontology;Unit">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#VirtualLocation -->
+
+    <owl:Class rdf:about="&ontology;VirtualLocation">
+        <rdfs:subClassOf rdf:resource="&prov;Location"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasPath"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasPath"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Activity -->
+
+    <owl:Class rdf:about="&prov;Activity">
+        <rdfs:label>Activity</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&prov;endedAtTime"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&prov;endedAtTime"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&prov;startedAtTime"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&prov;startedAtTime"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&prov;Agent"/>
+        <owl:disjointWith rdf:resource="&prov;Entity"/>
+        <owl:disjointWith rdf:resource="&prov;Location"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Entity"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&ontology;SetupEquipmentItem"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:disjointWith>
+        <prov:constraints rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig</prov:constraints>
+        <prov:dm rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Activity</prov:dm>
+        <prov:n rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Activity</prov:n>
+        <prov:definition>An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.</prov:definition>
+        <prov:category>starting-point</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Agent -->
+
+    <owl:Class rdf:about="&prov;Agent">
+        <rdfs:label>Agent</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&prov;Location"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Entity"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&ontology;Software"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&prov;SoftwareAgent"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:disjointWith>
+        <prov:dm rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-agent</prov:dm>
+        <prov:n rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Agent</prov:n>
+        <prov:definition xml:lang="en">An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent&apos;s activity. </prov:definition>
+        <prov:category>starting-point</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+    <owl:Class rdf:about="&prov;Entity">
+        <rdfs:label>Entity</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&prov;generatedAtTime"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&prov;generatedAtTime"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&prov;Location"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&prov;Agent"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&ontology;Software"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&prov;SoftwareAgent"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:disjointWith>
+        <prov:constraints rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig</prov:constraints>
+        <prov:dm rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-entity</prov:dm>
+        <prov:n rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Entity</prov:n>
+        <prov:component>entities-activities</prov:component>
+        <prov:definition xml:lang="en">An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. </prov:definition>
+        <prov:category>starting-point</prov:category>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Location -->
+
+    <owl:Class rdf:about="&prov;Location">
+        <rdfs:label>Location</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasDescription"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasDescription"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <prov:dm rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-attribute-location</prov:dm>
+        <prov:n rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-attribute</prov:n>
+        <prov:definition xml:lang="en">A location can be an identifiable geographic place (ISO 19112), but it can also be a non-geographic place such as a directory, row, or column. As such, there are numerous ways in which location can be expressed, such as by a coordinate, address, landmark, and so forth.</prov:definition>
+        <prov:category>expanded</prov:category>
+        <rdfs:seeAlso rdf:resource="&prov;atLocation"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Person -->
+
+    <owl:Class rdf:about="&prov;Person">
+        <rdfs:label>Person</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasName"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <prov:dm rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-agent</prov:dm>
+        <prov:n rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-types</prov:n>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:definition xml:lang="en">Person agents are people.</prov:definition>
+        <prov:category>expanded</prov:category>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#SoftwareAgent -->
+
+    <owl:Class rdf:about="&prov;SoftwareAgent">
+        <rdfs:label>SoftwareAgent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ontology;SetupEquipmentItem"/>
+        <rdfs:subClassOf rdf:resource="&prov;Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasVersion"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasVersion"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <prov:dm rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-agent</prov:dm>
+        <prov:n rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-types</prov:n>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:category>expanded</prov:category>
+        <prov:definition xml:lang="en">A software agent is running software.</prov:definition>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#AmplifierSetting_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;AmplifierSetting_1">
+        <rdf:type rdf:resource="&ontology;AmplifierSetting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Amplifier_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Amplifier_1">
+        <rdf:type rdf:resource="&ontology;Amplifier"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Camera_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Camera_1">
+        <rdf:type rdf:resource="&ontology;Camera"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Data_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Data_1">
+        <rdf:type rdf:resource="&ontology;Data"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#ElectrodeGroup_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;ElectrodeGroup_1">
+        <rdf:type rdf:resource="&ontology;ElectrodeGroup"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Electrode_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Electrode_1">
+        <rdf:type rdf:resource="&ontology;Electrode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Entity_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Entity_1">
+        <rdf:type rdf:resource="&prov;Entity"/>
+        <prov:generatedAtTime rdf:datatype="&xsd;dateTime">2012-01-01T09:00:00</prov:generatedAtTime>
+        <owl:sameAs rdf:resource="&ontology;Permit_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Experiment_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Experiment_1">
+        <rdf:type rdf:resource="&ontology;Experiment"/>
+        <hasResearchActivity rdf:resource="&ontology;Trial_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Permit_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Permit_1">
+        <rdf:type rdf:resource="&ontology;Permit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Project_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Project_1">
+        <rdf:type rdf:resource="&ontology;Project"/>
+        <hasExperiment rdf:resource="&ontology;Experiment_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#ProtocolAdjustment_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;ProtocolAdjustment_1">
+        <rdf:type rdf:resource="&ontology;ProtocolAdjustment"/>
+        <configuresProtocol rdf:resource="&ontology;Protocol_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Protocol_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Protocol_1">
+        <rdf:type rdf:resource="&ontology;Protocol"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Protocol_2 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Protocol_2">
+        <rdf:type rdf:resource="&ontology;Protocol"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#RecordingSession_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;RecordingSession_1">
+        <rdf:type rdf:resource="&ontology;RecordingSession"/>
+        <usesSetupEquipmentItem rdf:resource="&ontology;Software_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#ResourceConfiguration_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;ResourceConfiguration_1">
+        <rdf:type rdf:resource="&ontology;ResourceConfiguration"/>
+        <configures rdf:resource="&ontology;Protocol_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Resource_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Resource_1">
+        <rdf:type rdf:resource="&ontology;Resource"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Software_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Software_1">
+        <rdf:type rdf:resource="&ontology;Software"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#SpikeSorting_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;SpikeSorting_1">
+        <rdf:type rdf:resource="&ontology;SpikeSorting"/>
+        <usesData rdf:resource="&ontology;Data_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Tetrode_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Tetrode_1">
+        <rdf:type rdf:resource="&ontology;Tetrode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Trial_1 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Trial_1">
+        <rdf:type rdf:resource="&ontology;Trial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology#Trial_2 -->
+
+    <owl:NamedIndividual rdf:about="&ontology;Trial_2">
+        <rdf:type rdf:resource="&ontology;Trial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/ns/prov-o-20120312 -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/ns/prov-o-20120312"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov-o# -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/ns/prov-o#">
+        <prov:wasRevisionOf rdf:resource="http://www.w3.org/ns/prov-o-20120312"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontology;Trial_1"/>
+            <rdf:Description rdf:about="&ontology;Trial_2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontology;AnimalLogEntry"/>
+            <rdf:Description rdf:about="&ontology;Medication"/>
+            <rdf:Description rdf:about="&ontology;Permit"/>
+            <rdf:Description rdf:about="&ontology;Protocol"/>
+            <rdf:Description rdf:about="&ontology;Setup"/>
+            <rdf:Description rdf:about="&ontology;SetupEquipmentItem"/>
+            <rdf:Description rdf:about="&ontology;Stimulus"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontology;Protocol_1"/>
+            <rdf:Description rdf:about="&ontology;Protocol_2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontology;Analysis"/>
+            <rdf:Description rdf:about="&ontology;Experiment"/>
+            <rdf:Description rdf:about="&ontology;RecordingSession"/>
+            <rdf:Description rdf:about="&ontology;Trial"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
