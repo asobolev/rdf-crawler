@@ -55,3 +55,10 @@ docs/_build/
 
 # PyBuilder
 target/
+
+#Intellij
+*.iml
+.idea
+
+# credentials
+gdrive/*.json
