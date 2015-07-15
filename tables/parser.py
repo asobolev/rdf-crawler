@@ -1,15 +1,10 @@
-import json
-import gspread
-
-from oauth2client.client import SignedJwtAssertionCredentials
 from rdflib import Graph, Literal, BNode, Namespace, RDF, URIRef
-from rdflib.namespace import DC, FOAF
+from rdflib.namespace import XSD, OWL, DC
 
 
 class Parser(object):
     """
-    Class that downloads data from a remote Google Table file and parses it
-    to RDF.
+    Class that parses 2D sheet data to RDF.
     """
 
     # ontology statics
@@ -18,7 +13,6 @@ class Parser(object):
     owl_cls = 'http://www.w3.org/2002/07/owl#Class'
 
     # spreadsheet parsing attrs
-    scope = ['https://spreadsheets.google.com/feeds']
     exclude = ('HOWTO',)
 
     ignore = 'ignore'
@@ -32,19 +26,7 @@ class Parser(object):
         self.credentials = path_to_credentials
         self.verbose = verbose
 
-    def open(self, filename):
-        json_key = json.load(open(self.credentials))
-
-        credentials = SignedJwtAssertionCredentials(
-            json_key['client_email'],
-            bytes(json_key['private_key'], 'utf-8'),
-            Parser.scope
-        )
-
-        gc = gspread.authorize(credentials)
-        return gc.open(filename)
-
-    def parse_sheet(self, key, sheet):
+    def parse_single(self, key, title, data):
 
         def parse_indexes():
             idx_dict = {}
@@ -53,7 +35,7 @@ class Parser(object):
                 try:
                     idx_dict[name] = tech_col.index(name)
                 except ValueError:
-                    raise ValueError("Sheet %s does not have a proper %s record" % (sheet.title, name))
+                    raise ValueError("Sheet %s does not have a proper %s record" % (title, name))
 
             idx_dict['id'] = data[idx_dict[P.header]].index('id')
             return idx_dict
@@ -72,7 +54,7 @@ class Parser(object):
                     if j <= idx['id'] or bool(int(data[idx[P.ignore]][j])):
                         continue  # ignore technical info
                 except ValueError:
-                    raise ValueError("Sheet %s does not have a proper 'ignore' at %s position" % (sheet.title, str(j + 1)))
+                    raise ValueError("Sheet %s does not have a proper 'ignore' at %s position" % (title, str(j + 1)))
 
                 if len(value) == 0:
                     continue  # empty value
@@ -89,8 +71,6 @@ class Parser(object):
 
         g = Graph()
 
-        data = sheet.get_all_values()  # matrix of values
-
         P = Parser
         idx = parse_indexes()
 
@@ -100,10 +80,10 @@ class Parser(object):
         for row in data[idx[P.header] + 1:]:
             if len(row[idx['id']]) > 0 and any(row[idx['id'] + 1:]):
                 parse_row(row)
-                
+
         return g
 
-    def parse_file(self, filename):
+    def parse_multiple(self, key, sheets_list):
         """
         Parses a remote file with a given filename. Returns parsed graph.
 
@@ -116,16 +96,11 @@ class Parser(object):
         """
         g = Graph()
 
-        f = self.open(filename)
-        for sheet in f.worksheets():
-            if sheet.title not in Parser.exclude:
-                g += self.parse_sheet(f.title, sheet)
+        for title, sheet in sheets_list.items():
+            if title not in Parser.exclude:
+                g += self.parse_single(key, title, sheet)
 
                 if self.verbose:
-                    print("Sheet %s parsed" % sheet.title)
+                    print("Sheet %s parsed" % title)
 
         return g
-
-
-class Fuser(object):
-    pass

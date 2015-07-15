@@ -1,0 +1,4 @@
+
+
+class Fuser(object):
+    pass
