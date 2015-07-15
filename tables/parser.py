@@ -22,11 +22,8 @@ class Parser(object):
     alias = 'alias'
     header = 'header'
 
-    def __init__(self, path_to_credentials, verbose=False):
-        self.credentials = path_to_credentials
-        self.verbose = verbose
-
-    def parse_single(self, key, title, data):
+    @staticmethod
+    def parse_single(key, title, data):
 
         def parse_indexes():
             idx_dict = {}
@@ -83,7 +80,8 @@ class Parser(object):
 
         return g
 
-    def parse_multiple(self, key, sheets_list):
+    @staticmethod
+    def parse_multiple(key, sheets_list, verbose=False):
         """
         Parses a remote file with a given filename. Returns parsed graph.
 
@@ -98,9 +96,9 @@ class Parser(object):
 
         for title, sheet in sheets_list.items():
             if title not in Parser.exclude:
-                g += self.parse_single(key, title, sheet)
+                g += Parser.parse_single(key, title, sheet)
 
-                if self.verbose:
+                if verbose:
                     print("Sheet %s parsed" % title)
 
         return g

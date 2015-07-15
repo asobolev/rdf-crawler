@@ -34,7 +34,7 @@ class GDrive(object):
 
         f = self.authenticate().open(filename)
         for sheet in f.worksheets():
-            sheets_list[sheet.name] = sheet.get_all_values()
+            sheets_list[sheet.title] = sheet.get_all_values()
 
             if self.verbose:
                 print("Sheet %s downloaded." % sheet.title)
