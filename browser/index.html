@@ -13,21 +13,38 @@
 </head>
 
 <body>
-    <span class="btn btn-default btn-file">
+
+    <!-- FILE SELECTION -->
+
+    <span class="btn btn-default btn-block">
         <input type="file" id="rdf_file">
     </span>
 
-    <div class="container">
-        <div class="starter-template">
-            <h1>Bootstrap starter template</h1>
-            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-        </div>
+    <div class="starter-template">
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    </div>
 
+    <!-- CLASSES LIST -->
+
+    <div class="col-md-4">
         <ul class="list-group" id="triples-list">
+            <a href="#" class="list-group-item">
+                <span class="badge">4</span>
+                Experiment
+            </a>
+            <a href="#" class="list-group-item">
+                <span class="badge">21</span>
+                RecordingSession
+            </a>
+        </ul>
+    </div>
+
+    <div class="col-md-8">
+        <ul class="list-group" id="foo">
             <li class="list-group-item">Cras justo odio</li>
         </ul>
-
-    </div><!-- /.container -->
+    </div>
 
     <script src="./js/jquery-1.11.0.min.js"></script>
     <script src="./js/n3-browser.min.js"></script>
