@@ -11,15 +11,16 @@ import os, sys
 if __name__ == "__main__":
     """
     Usage:
-    python tables/update.py tests/credentials.json /tmp/data.ttl
+    python tables/update.py "DATA-2015-DEV" tests/credentials.json /tmp/data.ttl
 
     Input args:
 
     1) credentials file path
     2) RDF file path with existing data
     """
-    credentials = sys.argv[1]
-    rdf_store = sys.argv[2]
+    key = sys.argv[1]
+    credentials = sys.argv[2]
+    rdf_store = sys.argv[3]
     rdf_format = 'turtle'
 
     # existing
@@ -30,7 +31,6 @@ if __name__ == "__main__":
     graph1.parse(rdf_store, format=rdf_format)
 
     # fetched
-    key = "DATA-2015-DEV"
     gd = GDrive(credentials)
     data = gd.fetch(key)
 
