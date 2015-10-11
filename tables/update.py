@@ -35,7 +35,7 @@ if __name__ == "__main__":
     data = gd.fetch(key)
 
     graph2 = Parser.parse_multiple(key, data)
-   
+
     merged = Fuser.fuse(graph1, graph2)
     merged.serialize(rdf_store, format=rdf_format)
 

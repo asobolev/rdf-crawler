@@ -25,12 +25,37 @@ class Parser(object):
     @staticmethod
     def parse_single(key, title, data):
 
-        def parse_indexes():
+        def parse_prefix(f):
+            """ prefix as per SPARQL, like 
+                'sirotalab: <http://sirotalab.bio.lmu.de/ontology/0.1#>' 
+            """
+            namespace = f[:f.find(":")]
+            prefix = f[f.find(":") + 1:].lstrip().replace("<", "").replace(">", "")
+
+            return (namespace, prefix)
+
+        def parse_prefixes(prefix_row):
+            prefix_dict = {}
+
+            for j, value in enumerate(prefix_row):
+                try:
+                    if j <= idx['id'] or bool(int(data[idx[P.ignore]][j])):
+                        continue  # ignore technical info
+                except ValueError:
+                    raise ValueError("Sheet %s does not have a proper 'ignore' at %s position" % (title, str(j + 1)))
+
+                if value:
+                    namespace, prefix = parse_prefix(value)
+                    if namespace not in prefix_dict:
+                        prefix_dict[namespace] = prefix
+
+            return prefix_dict
+
+        def parse_indexes(tech_column):
             idx_dict = {}
-            tech_col = [x[0] for x in data]
             for name in (P.ignore, P.prefix, P.reverse, P.relation, P.alias, P.header):
                 try:
-                    idx_dict[name] = tech_col.index(name)
+                    idx_dict[name] = tech_column.index(name)
                 except ValueError:
                     raise ValueError("Sheet %s does not have a proper %s record" % (title, name))
 
@@ -56,7 +81,8 @@ class Parser(object):
                 if len(value) == 0:
                     continue  # empty value
 
-                predicate = "".join([data[idx[P.prefix]][j], data[idx[P.header]][j]])
+                namespace, prefix = parse_prefix(data[idx[P.prefix]][j])
+                predicate = "".join([prefix, data[idx[P.header]][j]])
 
                 if len(data[idx[P.relation]][j]) > 0:
                     local_id = value.split('(')[1].split(')')[0]
@@ -69,7 +95,11 @@ class Parser(object):
         g = Graph()
 
         P = Parser
-        idx = parse_indexes()
+        idx = parse_indexes([x[0] for x in data])  # column with tech info
+        prefixes = parse_prefixes(data[idx[P.prefix]])  # row with all prefixes
+
+        for namespace, prefix in prefixes.items():
+            g.namespace_manager.bind(namespace, prefix)
 
         # this is like http://foo.com/bar#Animal
         rdf_type = data[idx[P.prefix]][idx['id']]
@@ -96,7 +126,14 @@ class Parser(object):
 
         for title, sheet in sheets_list.items():
             if title not in Parser.exclude:
-                g += Parser.parse_single(key, title, sheet)
+                namespaces = [x[0] for x in g.namespaces()]
+
+                to_add = Parser.parse_single(key, title, sheet)
+                for namespace, prefix in to_add.namespaces():
+                    if namespace not in namespaces:
+                        g.namespace_manager.bind(namespace, prefix)
+
+                g += to_add
 
                 if verbose:
                     print("Sheet %s parsed" % title)
