@@ -17,9 +17,13 @@ class GDrive(object):
     def authenticate(self):
         json_key = json.load(open(self.credentials))
 
+        import ipdb
+        ipdb.set_trace()
+
         credentials = SignedJwtAssertionCredentials(
             json_key['client_email'],
-            bytes(json_key['private_key'], 'utf-8'),
+            #bytes(json_key['private_key'], 'utf-8'),
+            bytes(json_key['private_key']),
             GDrive.scope
         )
 
